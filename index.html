@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Agrinho 2026 - Tomate Sustentável</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f7f0; display: flex; justify-content: center; padding: 20px; }
+        .container { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 500px; }
+        h1 { color: #2e7d32; text-align: center; font-size: 1.5rem; }
+        .controles { margin-bottom: 20px; }
+        .controle-grupo { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="range"] { width: 100%; cursor: pointer; }
+        .painel-status { text-align: center; padding: 15px; border-radius: 10px; background: #e8f5e9; }
+        #status-texto { font-size: 1.2rem; font-weight: bold; margin: 10px 0; }
+        .feedback { font-size: 0.9rem; color: #555; }
+        #planta-img { font-size: 50px; display: block; margin: 10px auto; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulador de Estufa: Tomate 🍅</h1>
+    <p style="font-size: 0.8rem; text-align: center;">Tema Agrinho 2026: Equilíbrio e Sustentabilidade</p>
+
+    <div class="controles">
+        <div class="controle-grupo">
+            <label>Temperatura: <span id="txtTemp">23</span>°C</label>
+            <input type="range" id="inputTemp" min="0" max="50" value="23">
+        </div>
+
+        <div class="controle-grupo">
+            <label>Umidade do Ar: <span id="txtAr">60</span>%</label>
+            <input type="range" id="inputAr" min="0" max="100" value="60">
+        </div>
+
+        <div class="controle-grupo">
+            <label>Umidade do Solo: <span id="txtSolo">70</span>%</label>
+            <input type="range" id="inputSolo" min="0" max="100" value="70">
+        </div>
+    </div>
+
+    <div class="painel-status">
+        <div id="planta-img">🌿</div>
+        <div id="status-texto">Ambiente Ideal</div>
+        <div id="feedback-detalhe" class="feedback">A planta está crescendo de forma sustentável!</div>
+    </div>
+</div>
+
+<script>
+    const inputs = document.querySelectorAll('input[type="range"]');
+    
+    function atualizarSimulador() {
+        const temp = parseInt(document.getElementById('inputTemp').value);
+        const ar = parseInt(document.getElementById('inputAr').value);
+        const solo = parseInt(document.getElementById('inputSolo').value);
+
+        // Atualiza os textos na tela
+        document.getElementById('txtTemp').innerText = temp;
+        document.getElementById('txtAr').innerText = ar;
+        document.getElementById('txtSolo').innerText = solo;
+
+        let status = "Excelente";
+        let feedback = "Equilíbrio perfeito entre produção e recursos!";
+        let emoji = "🍅";
+        let cor = "#2e7d32";
+
+        // Lógica de verificação (Exemplo simplificado)
+        if (temp < 15 || temp > 32) {
+            status = "Estresse Térmico";
+            feedback = "Temperatura inadequada! Isso prejudica a polinização.";
+            emoji = "🥀";
+            cor = "#d32f2f";
+        } else if (solo < 40) {
+            status = "Solo Seco";
+            feedback = "A planta precisa de água, mas evite desperdícios!";
+            emoji = "🍂";
+            cor = "#f57c00";
+        } else if (ar > 85) {
+            status = "Risco de Fungos";
+            feedback = "Umidade do ar muito alta! Risco de doenças na lavoura.";
+            emoji = "🍄";
+            cor = "#7b1fa2";
+        }
+
+        // Aplica as mudanças visualmente
+        const statusTexto = document.getElementById('status-texto');
+        statusTexto.innerText = status;
+        statusTexto.style.color = cor;
+        document.getElementById('feedback-detalhe').innerText = feedback;
+        document.getElementById('planta-img').innerText = emoji;
+    }
+
+    // Adiciona o evento de escuta para cada slider
+    inputs.forEach(input => {
+        input.addEventListener('input', atualizarSimulador);
+    });
+
+    // Inicia o simulador
+    atualizarSimulador();
+</script>
+
+</body>
+</html>
