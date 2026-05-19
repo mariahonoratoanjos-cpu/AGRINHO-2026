@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador Agrinho 2026 - Tomate Sustentável</title>
+    <title>𝑬𝒔𝒕𝒖𝒇𝒂 𝑫𝒊𝒈𝒊𝒕𝒂𝒍: 𝑶 𝑪𝒊𝒄𝒍𝒐 𝒅𝒐 𝑻𝒐𝒎𝒂𝒕𝒆🍅</title>
     <style>
-        body { font-family: sans-serif; background-color: #f0f7f0; display: flex; justify-content: center; padding: 20px; }
-        .container { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 500px; }
+        body { font-family: sans-serif; background: linear-gradient(180deg, #d8f2d2 0%, #f7a6a6 60%, #e33a3a 100%); display: flex; justify-content: center; align-items: center; padding: 20px; min-height: 100vh; overflow: hidden; position: relative; }
+        .tomate-fall { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
+        .tomate { position: absolute; font-size: 2rem; animation: cair 7s linear infinite; }
+        .tomate:nth-child(1) { left: 5%; animation-duration: 6s; animation-delay: 0s; }
+        .tomate:nth-child(2) { left: 20%; animation-duration: 8s; animation-delay: 1s; }
+        .tomate:nth-child(3) { left: 35%; animation-duration: 7s; animation-delay: 0.5s; }
+        .tomate:nth-child(4) { left: 50%; animation-duration: 9s; animation-delay: 1.5s; }
+        .tomate:nth-child(5) { left: 65%; animation-duration: 6.5s; animation-delay: 0.2s; }
+        .tomate:nth-child(6) { left: 80%; animation-duration: 8.5s; animation-delay: 0.8s; }
+        .tomate:nth-child(7) { left: 90%; animation-duration: 7.5s; animation-delay: 1.2s; }
+        @keyframes cair {
+            0% { transform: translateY(-15vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateY(115vh) rotate(720deg); opacity: 0; }
+        }
+        .quadro { position: relative; display: flex; justify-content: center; width: 100%; max-width: 1180px; margin: 0 auto; padding: 25px; border-radius: 28px; background: rgba(255, 223, 223, 0.9); box-shadow: 0 22px 60px rgba(0,0,0,0.18); border: 1px solid rgba(255, 150, 150, 0.5); }
+        .layout { display: flex; gap: 24px; align-items: flex-start; width: 100%; }
+        .container, .descricao { flex: 1; min-width: 280px; }
+        .container { position: relative; background: rgba(255,255,255,0.98); padding: 24px; border-radius: 18px; box-shadow: 0 10px 28px rgba(0,0,0,0.1); z-index: 1; }
+        .descricao { position: relative; background: rgba(255,255,255,0.96); padding: 24px; border-radius: 18px; box-shadow: 0 10px 28px rgba(0,0,0,0.08); color: #2f4f2f; }
+        .descricao h2 { margin-top: 0; color: #b71c1c; font-size: 1.3rem; }
+        .descricao p { margin: 10px 0; line-height: 1.5; font-size: 0.95rem; }
+        .descricao ul { margin: 10px 0 0 18px; line-height: 1.5; }
+        .descricao li { margin-bottom: 8px; }
+        .project-image { width: 100%; border-radius: 18px; margin: 16px 0 0; box-shadow: 0 12px 28px rgba(0,0,0,0.12); object-fit: cover; }
         h1 { color: #2e7d32; text-align: center; font-size: 1.5rem; }
         .controles { margin-bottom: 20px; }
         .controle-grupo { margin-bottom: 15px; }
@@ -19,10 +42,24 @@
     </style>
 </head>
 <body>
+    <div class="tomate-fall">
+        <span class="tomate">🍅</span>
+        <span class="tomate">🍅</span>
+        <span class="tomate">🍅</span>
+        <span class="tomate">🍅</span>
+        <span class="tomate">🍅</span>
+        <span class="tomate">🍅</span>
+        <span class="tomate">🍅</span>
+    </div>
 
-<div class="container">
-    <h1>Simulador de Estufa: Tomate 🍅</h1>
+    <div class="quadro">
+        <div class="layout">
+            <div class="container">
+                <h1>𝑬𝒔𝒕𝒖𝒇𝒂 𝑫𝒊𝒈𝒊𝒕𝒂𝒍: 𝑶 𝑪𝒊𝒄𝒍𝒐 𝒅𝒐 𝑻𝒐𝒎𝒂𝒕𝒆🍅</h1>
+    <p style="font-size: 0.9rem; text-align: center; margin: 8px 0 2px;">Maria julya Honorato dos Anjos</p>
     <p style="font-size: 0.8rem; text-align: center;">Tema Agrinho 2026: Equilíbrio e Sustentabilidade</p>
+    <!-- Adicione a imagem fornecida em images/estufa-digital.jpg para que ela apareça aqui -->
+    <img class="project-image" src="images/estufa-digital.jpg" alt="Imagem do projeto Estufa Digital: O Ciclo do Tomate">
 
     <div class="controles">
         <div class="controle-grupo">
@@ -47,6 +84,28 @@
         <div id="feedback-detalhe" class="feedback">A planta está crescendo de forma sustentável!</div>
     </div>
 </div>
+        <aside class="descricao">
+            <h2>Como usar o aplicativo</h2>
+            <p>Use os controles deslizantes para ajustar:</p>
+            <ul>
+                <li>Temperatura: define o calor dentro da estufa.</li>
+                <li>Umidade do Ar: controla o ambiente de atmosfera.</li>
+                <li>Umidade do Solo: mostra a água disponível para a planta.</li>
+            </ul>
+            <p>O painel à direita mostra o status atual:</p>
+            <ul>
+                <li><strong>Excelente</strong>: condições boas para o tomate.</li>
+                <li><strong>Estresse Térmico</strong>: temperatura fora do ideal.</li>
+                <li><strong>Solo Seco</strong>: precisa regar menos ou melhor.</li>
+                <li><strong>Risco de Fungos</strong>: ar muito úmido.</li>
+            </ul>
+            <h2>Como foi feito</h2>
+            <p>O projeto foi construído com HTML, CSS e JavaScript puro em um só arquivo.</p>
+            <p>O layout usa um painel principal com controles e status, enquanto o script calcula o retorno ao mover os sliders.</p>
+            <p>O efeito visual inclui um fundo degradê e tomates animados caindo para deixar o app mais atraente.</p>
+        </aside>
+        </div>
+    </div>
 
 <script>
     const inputs = document.querySelectorAll('input[type="range"]');
